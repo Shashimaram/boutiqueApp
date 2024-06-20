@@ -31,11 +31,11 @@ stages:
           dockerVersion: '17.09.0-ce'
           releaseType: stable
       
-      - task: CmdLine@2
-        displayName: logingin to docker
+      
+      - task: Docker@2
         inputs:
-          script: |
-            docker login -u $(dockerUsername) -p $(dockerpass)
+          containerRegistry: 'Dockerhub'
+          command: 'login'
       - task: Docker@2
         inputs:
           containerRegistry: 'Dockerhub'
