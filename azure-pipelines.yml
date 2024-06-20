@@ -41,9 +41,9 @@ stages:
         displayName: build and push to docker
         inputs:
           containerRegistry: 'Dockerhub'
-          repository: 'recommendations'
+          repository: 'recommendationservice'
           command: 'buildAndPush'
-          Dockerfile: '**/src/recommendations/Dockerfile'
+          Dockerfile: '**/src/recommendationservice/Dockerfile'
 
       - task: CmdLine@2
         inputs:
@@ -59,8 +59,8 @@ stages:
         displayName: RUN AQUASEC TRIVY SCAN AND COPY TO ARTIFACTS STAGING DIRECTORY
         inputs:
           script: |
-            trivy image --exit-code 0 --severity LOW,MEDIUM $(dockerUsername)/recommendations:$(tag) > low-med.txt
-            trivy image --exit-code 1 --severity HIGH,CRITICAL $(dockerUsername)/recommendations:$(tag) > high-critical.txt
+            trivy image --exit-code 0 --severity LOW,MEDIUM $(dockerUsername)/recommendationservice:$(tag) > low-med.txt
+            trivy image --exit-code 1 --severity HIGH,CRITICAL $(dockerUsername)/recommendationservice:$(tag) > high-critical.txt
             ls -l
             cp -rvf *.txt $(target)
       
