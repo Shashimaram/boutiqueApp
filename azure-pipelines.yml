@@ -37,6 +37,11 @@ stages:
         inputs:
           containerRegistry: 'Dockerhub'
           command: 'login'
+      - task: CmdLine@2
+        displayName: docker info
+        inputs:
+          script: |
+            docker info
       - task: Docker@2
         displayName: build and push to docker
         inputs:
