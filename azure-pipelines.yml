@@ -17,6 +17,13 @@ stages:
   - stage:
     displayName: Building
     jobs:
+    - job: Scantheocalproject
+      displayName: scanning folder
+      steps:
+      - task: trivy@1
+        inputs: 
+          path: '**/src/frontend'
+
     - job: 
       displayName: Installing Docker cli
       steps:
@@ -36,4 +43,4 @@ stages:
       - task: trivy@1
         inputs:
           version: 'latest'
-          path: 'frontend'
+          image: frontend
