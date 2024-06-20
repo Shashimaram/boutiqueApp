@@ -31,3 +31,9 @@ stages:
           command: 'build'
           Dockerfile: '**/src/frontend/Dockerfile'
       - script: "sudo docker images"
+
+
+      - task: trivy@1
+        inputs:
+          version: 'latest'
+          path: 'frontend'
