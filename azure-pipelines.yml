@@ -30,18 +30,13 @@ stages:
         inputs:
           dockerVersion: '17.09.0-ce'
           releaseType: stable
+          
       - task: Docker@2
         inputs:
           containerRegistry: 'Dockerhub'
           repository: 'frontend'
-          command: 'build'
+          command: 'buildAndPush'
           Dockerfile: '**/src/frontend/Dockerfile'
-      - task: Docker@2
-        inputs:
-          containerRegistry: 'Dockerhub'
-          repository: 'frontend'
-          command: 'push'
-          addBaseImageData: false
 
       - task: CmdLine@2
         inputs:
