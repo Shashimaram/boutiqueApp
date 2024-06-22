@@ -25,7 +25,7 @@ seccompProfile:
 adService:
   create: true
   name: adservice
-  tag: 00
+  tag: '192'
   resources:
     requests:
       cpu: 200m
@@ -36,7 +36,7 @@ adService:
 cartService:
   create: true
   name: cartservice
-  tag: 00
+  tag: '201'
   resources:
     requests:
       cpu: 200m
@@ -47,7 +47,7 @@ cartService:
 checkoutService:
   create: true
   name: checkoutservice
-  tag: 00
+  tag: '207'
   resources:
     requests:
       cpu: 100m
@@ -58,7 +58,7 @@ checkoutService:
 currencyService:
   create: true
   name: currencyservice
-  tag: 00
+  tag: '213'
   resources:
     requests:
       cpu: 100m
@@ -69,7 +69,7 @@ currencyService:
 emailService:
   create: true
   name: emailservice
-  tag: 00
+  tag: '211'
   resources:
     requests:
       cpu: 100m
@@ -77,32 +77,9 @@ emailService:
     limits:
       cpu: 200m
       memory: 128Mi
-frontend:
-  create: true
-  name: frontend
-  tag: 00
-  externalService: true
-  cymbalBranding: false
-  platform: local
-  singleSharedSession: false
-  virtualService:
-    create: false
-    hosts:
-      - '*'
-    gateway:
-      name: asm-ingressgateway
-      namespace: asm-ingress
-      labelKey: asm
-      labelValue: ingressgateway
-  resources:
-    requests:
-      cpu: 100m
-      memory: 64Mi
-    limits:
-      cpu: 200m
-      memory: 128Mi
+frontend: '238'
 loadGenerator:
-  tag: 00
+  tag: '205'
   create: true
   name: loadgenerator
   checkFrontendInitContainer: true
@@ -115,7 +92,7 @@ loadGenerator:
       memory: 512Mi
 paymentService:
   create: true
-  tag: 00
+  tag: '202'
   name: paymentservice
   resources:
     requests:
@@ -126,7 +103,7 @@ paymentService:
       memory: 128Mi
 productCatalogService:
   create: true
-  tag: 00
+  tag: '198'
   name: productcatalogservice
   extraLatency: ''
   resources:
@@ -138,7 +115,7 @@ productCatalogService:
       memory: 128Mi
 recommendationService:
   create: true
-  tag: 00
+  tag: '209'
   name: recommendationservice
   resources:
     requests:
@@ -149,7 +126,7 @@ recommendationService:
       memory: 450Mi
 shippingService:
   create: true
-  tag: 00
+  tag: '194'
   name: shippingservice
   resources:
     requests:
@@ -174,3 +151,4 @@ cartDatabase:
 shoppingAssistantService:
   create: false
   name: shoppingassistantservice
+  tag: '190'
