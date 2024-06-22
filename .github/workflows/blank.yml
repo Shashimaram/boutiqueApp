@@ -14,7 +14,7 @@ jobs:
           echo "Latest tag: $LATEST_TAG"
           # Set LATEST_TAG as an environment variable
           echo "LATEST_TAG=$LATEST_TAG"
-          shell: /usr/bin/bash -e {0}
+          # shell: /usr/bin/bash -e {0}
 
 
       - uses: actions/checkout@v4
