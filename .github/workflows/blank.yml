@@ -42,16 +42,16 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-             cartService.tag: "${{ env.cartService }}",
-             currencyService.tag: "${{ env.currencyservice }}",
-             emailService.tag: "${{ env.emailservice }}",
-             recommendationService.tag: "${{ env.recommendationservice }}",
-             checkoutService.tag: "${{ env.checkoutservice }}",
-             loadGenerator.tag: "${{ env.loadgenerator }}",
-             paymentService.tag: "${{ env.paymentservice }}",
-             productCatalogService.tag: "${{ env.productcatalogservice }}",
-             shippingService.tag: "${{ env.shippingservice }}",
-             adService.tag: "${{ env.adservice }}",
-             shoppingAssistantService.tag: "${{ env.shoppingassistantservice }}"
-             frontend: "${{ env.frontend }}"
+             "cartService.tag": "${{ env.cartService }}",
+             "currencyService.tag": "${{ env.currencyservice }}",
+             "emailService.tag": "${{ env.emailservice }}",
+             "recommendationService.tag": "${{ env.recommendationservice }}",
+             "checkoutService.tag": "${{ env.checkoutservice }}",
+             "loadGenerator.tag": "${{ env.loadgenerator }}",
+             "paymentService.tag": "${{ env.paymentservice }}",
+             "productCatalogService.tag": "${{ env.productcatalogservice }}",
+             "shippingService.tag": "${{ env.shippingservice }}",
+             "adService.tag": "${{ env.adservice }}",
+             "shoppingAssistantService.tag": "${{ env.shoppingassistantservice }}",
+             "frontend": "${{ env.frontend }}"
             }
