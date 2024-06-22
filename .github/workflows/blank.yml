@@ -29,5 +29,5 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-              "cartService.tag": "${{ steps.Get-Latest-Tag.outputs.LATEST_TAG }}",
+              "cartService.tag": $LATEST_TAG,
             }
