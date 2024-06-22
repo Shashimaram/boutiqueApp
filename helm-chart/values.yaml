@@ -25,7 +25,7 @@ seccompProfile:
 adService:
   create: true
   name: adservice
-  tag: ''
+  tag: 00
   resources:
     requests:
       cpu: 200m
@@ -36,7 +36,7 @@ adService:
 cartService:
   create: true
   name: cartservice
-  tag: '201'
+  tag: 00
   resources:
     requests:
       cpu: 200m
@@ -47,7 +47,7 @@ cartService:
 checkoutService:
   create: true
   name: checkoutservice
-  tag: ''
+  tag: 00
   resources:
     requests:
       cpu: 100m
@@ -58,7 +58,7 @@ checkoutService:
 currencyService:
   create: true
   name: currencyservice
-  tag: ''
+  tag: 00
   resources:
     requests:
       cpu: 100m
@@ -69,7 +69,7 @@ currencyService:
 emailService:
   create: true
   name: emailservice
-  tag: ''
+  tag: 00
   resources:
     requests:
       cpu: 100m
@@ -80,7 +80,7 @@ emailService:
 frontend:
   create: true
   name: frontend
-  tag: ''
+  tag: 00
   externalService: true
   cymbalBranding: false
   platform: local
@@ -102,7 +102,7 @@ frontend:
       cpu: 200m
       memory: 128Mi
 loadGenerator:
-  tag: ''
+  tag: 00
   create: true
   name: loadgenerator
   checkFrontendInitContainer: true
@@ -115,7 +115,7 @@ loadGenerator:
       memory: 512Mi
 paymentService:
   create: true
-  tag: ''
+  tag: 00
   name: paymentservice
   resources:
     requests:
@@ -126,7 +126,7 @@ paymentService:
       memory: 128Mi
 productCatalogService:
   create: true
-  tag: ''
+  tag: 00
   name: productcatalogservice
   extraLatency: ''
   resources:
@@ -138,7 +138,7 @@ productCatalogService:
       memory: 128Mi
 recommendationService:
   create: true
-  tag: ''
+  tag: 00
   name: recommendationservice
   resources:
     requests:
@@ -149,7 +149,7 @@ recommendationService:
       memory: 450Mi
 shippingService:
   create: true
-  tag: ''
+  tag: 00
   name: shippingservice
   resources:
     requests:
