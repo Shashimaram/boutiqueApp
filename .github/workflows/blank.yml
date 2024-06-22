@@ -2,13 +2,29 @@ on:
   repository_dispatch:
     types: 'do-something'
 jobs:
-  build:
-    name: Run Some Thing
+  cartsetvice:
+    name: updating cartservice
     runs-on: ubuntu-latest
 
     permissions: write-all
     steps:
-      - name: Do Something
+      - name: Get Latest Tag
         run: |
           LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')
           echo "Latest tag: $LATEST_TAG"
+
+
+      - uses: actions/checkout@v4
+      - uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'helm-chart/values.yaml'
+          branch: main
+          targetBranch: main
+          createPR: 'true'
+          description: Test GitHub Action
+          message: 'Update All Images' 
+          title: 'Version Updates '
+          changes: |
+            {
+              "cartService.tag": "${{ env.LATEST_TAG }}",
+            }

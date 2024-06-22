@@ -70,6 +70,7 @@ adService:
 cartService:
   create: true
   name: cartservice
+  tag: ''
   resources:
     requests:
       cpu: 200m
