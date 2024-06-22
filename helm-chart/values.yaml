@@ -1,5 +1,5 @@
 images:
-  repository: gcr.io/google-samples/microservices-demo
+  repository: shashidher
   tag: ''
 serviceAccounts:
   create: true
@@ -25,6 +25,7 @@ seccompProfile:
 adService:
   create: true
   name: adservice
+  tag: ''
   resources:
     requests:
       cpu: 200m
@@ -46,6 +47,7 @@ cartService:
 checkoutService:
   create: true
   name: checkoutservice
+  tag: ''
   resources:
     requests:
       cpu: 100m
@@ -56,6 +58,7 @@ checkoutService:
 currencyService:
   create: true
   name: currencyservice
+  tag: ''
   resources:
     requests:
       cpu: 100m
@@ -66,6 +69,7 @@ currencyService:
 emailService:
   create: true
   name: emailservice
+  tag: ''
   resources:
     requests:
       cpu: 100m
@@ -76,6 +80,7 @@ emailService:
 frontend:
   create: true
   name: frontend
+  tag: ''
   externalService: true
   cymbalBranding: false
   platform: local
@@ -97,6 +102,7 @@ frontend:
       cpu: 200m
       memory: 128Mi
 loadGenerator:
+  tag: ''
   create: true
   name: loadgenerator
   checkFrontendInitContainer: true
@@ -109,6 +115,7 @@ loadGenerator:
       memory: 512Mi
 paymentService:
   create: true
+  tag: ''
   name: paymentservice
   resources:
     requests:
@@ -119,6 +126,7 @@ paymentService:
       memory: 128Mi
 productCatalogService:
   create: true
+  tag: ''
   name: productcatalogservice
   extraLatency: ''
   resources:
@@ -130,6 +138,7 @@ productCatalogService:
       memory: 128Mi
 recommendationService:
   create: true
+  tag: ''
   name: recommendationservice
   resources:
     requests:
@@ -140,6 +149,7 @@ recommendationService:
       memory: 450Mi
 shippingService:
   create: true
+  tag: ''
   name: shippingservice
   resources:
     requests:
