@@ -30,6 +30,6 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-             "cartService.tag": "${{ env.LATEST_TAG }}"
+             "cartService.tag": 435
             }
         
