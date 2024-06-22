@@ -29,5 +29,5 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-              "cartService.tag": $LATEST_TAG,
+              "cartService.tag": "543",
             }
