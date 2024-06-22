@@ -15,9 +15,11 @@ jobs:
           # Set LATEST_TAG as an environment variable
           echo "LATEST_TAG=$LATEST_TAG"
           # shell: /usr/bin/bash -e {0}
-
+      
 
       - uses: actions/checkout@v4
+      - name: checking file
+        run: ls
       - uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'helm-chart/values.yaml'
@@ -31,3 +33,4 @@ jobs:
             {
               "cartService.tag": "543",
             }
+        
