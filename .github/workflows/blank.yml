@@ -12,6 +12,8 @@ jobs:
         run: |
           LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')
           echo "Latest tag: $LATEST_TAG"
+          # Add the line below to set the pipeline variable
+          echo "::set-output name=LATEST_TAG::$LATEST_TAG"
 
 
       - uses: actions/checkout@v4
@@ -26,5 +28,5 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-              "cartService.tag": "${{ env.LATEST_TAG }}",
+              "cartService.tag": "${{ steps.Get-Latest-Tag.outputs.LATEST_TAG }}",
             }
