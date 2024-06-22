@@ -53,5 +53,5 @@ jobs:
              "shippingService.tag": "${{ env.shippingservice }}",
              "adService.tag": "${{ env.adservice }}",
              "shoppingAssistantService.tag": "${{ env.shoppingassistantservice }}",
-             "frontend": "${{ env.frontend }}"
+             "frontend.tag": "${{ env.frontend }}"
             }
