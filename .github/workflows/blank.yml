@@ -11,7 +11,7 @@ jobs:
       - name: Get Latest Tag
         run: |
           LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name') >> $GITHUB_ENV
-          echo "version=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "cartService=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
           # echo "Latest tag: $LATEST_TAG"
           # Set LATEST_TAG as an environment variable
           # echo "LATEST_TAG=$LATEST_TAG"
@@ -31,6 +31,6 @@ jobs:
           title: 'Version Updates '
           changes: |
             {
-             "cartService.tag": "${{ env.version }}"
+             "cartService.tag": "${{ env.cartService }}"
             }
         
