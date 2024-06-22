@@ -12,6 +12,16 @@ jobs:
         run: |
           LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name') >> $GITHUB_ENV
           echo "cartService=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "currencyservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/currencyservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "emailservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/emailservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "recommendationservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/recommendationservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "checkoutservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/checkoutservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "loadgenerator=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/loadgenerator/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "paymentservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/paymentservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "productcatalogservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/productcatalogservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "shippingservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/shippingservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "adservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/adservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
+          echo "shoppingassistantservice=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/shoppingassistantservice/tags | jq -r '.results | .[0].name')" >> $GITHUB_ENV
           # echo "Latest tag: $LATEST_TAG"
           # Set LATEST_TAG as an environment variable
           # echo "LATEST_TAG=$LATEST_TAG"
@@ -32,5 +42,14 @@ jobs:
           changes: |
             {
              "cartService.tag": "${{ env.cartService }}"
+             "currencyservice.tag": "${{ env.currencyservice }}"
+             "emailservice.tag": "${{ env.emailservice }}"
+             "recommendationservice.tag": "${{ env.recommendationservice }}"
+             "checkoutservice.tag": "${{ env.checkoutservice }}"
+             "loadgenerator.tag": "${{ env.loadgenerator }}"
+             "paymentservice.tag": "${{ env.paymentservice }}"
+             "productcatalogservice.tag": "${{ env.productcatalogservice }}"
+             "shippingservice.tag": "${{ env.shippingservice }}"
+             "adservice.tag": "${{ env.adservice }}"
+             "shoppingassistantservice.tag": "${{ env.shoppingassistantservice }}"
             }
-        
