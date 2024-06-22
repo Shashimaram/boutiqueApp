@@ -12,8 +12,9 @@ jobs:
         run: |
           LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')
           echo "Latest tag: $LATEST_TAG"
-          # Add the line below to set the pipeline variable
-          echo "::set-output name=LATEST_TAG::$LATEST_TAG"
+          # Set LATEST_TAG as an environment variable
+          echo "LATEST_TAG=$LATEST_TAG"
+          shell: /usr/bin/bash -e {0}
 
 
       - uses: actions/checkout@v4
