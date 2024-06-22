@@ -5,6 +5,10 @@ jobs:
   build:
     name: Run Some Thing
     runs-on: ubuntu-latest
+
+    permissions: write-all
     steps:
       - name: Do Something
-        run: echo Doing Something...
+        run: |
+          LATEST_TAG=$(curl -s https://hub.docker.com/v2/namespaces/shashidher/repositories/cartservice/tags | jq -r '.results | .[0].name')
+          echo "Latest tag: $LATEST_TAG"
