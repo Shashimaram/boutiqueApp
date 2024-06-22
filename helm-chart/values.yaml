@@ -77,7 +77,35 @@ emailService:
     limits:
       cpu: 200m
       memory: 128Mi
-frontend: '238'
+
+
+frontend:
+  create: true
+  name: frontend
+  tag: '205'
+  externalService: true
+  cymbalBranding: false
+  # One of: local, gcp, aws, azure, onprem, alibaba. When not set, defaults to "local" unless running in GKE, otherwise auto-sets to gcp.
+  platform: local
+  singleSharedSession: false
+  virtualService:
+    create: false
+    hosts:
+    - "*"
+    gateway:
+      name: asm-ingressgateway
+      namespace: asm-ingress
+      labelKey: asm
+      labelValue: ingressgateway
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+
 loadGenerator:
   tag: '205'
   create: true
